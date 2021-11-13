@@ -15,6 +15,11 @@ export class AppComponent {
     console.log(value);
     this.enteredText = value;
   }
-}
 
-//display each character in the template, but color green if it's right, red if it's wrong and gray if a given character hasn't been entered yet
+  compare(randomLetter: string, enteredLetter: string) {
+    if (!enteredLetter) {
+      return 'pending';
+    }
+    return randomLetter === enteredLetter ? 'correct ' : 'incorrect';
+  }
+}
